@@ -1,11 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LandingPageController;
 
 // routes/web.php
-Route::get('/', [App\Http\Controllers\LandingPageController::class, 'index']);
+Route::get('/', [LandingPageController::class, 'index'])->name('landing');
 
-Route::get('/login-level', function () {
-    return view('login-level');
-})->name('login-level');
+Route::get('/landing', function () {
+    return view('landing');
+})->middleware('auth');
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
 

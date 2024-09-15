@@ -11,7 +11,7 @@
 <div class="overlay"></div>
     <div class="popup">
         <p>Anda harus login</p>
-        <button onclick="location.href='/login-level'">Login</button>
+        <button onclick="location.href=''">Login</button>
     </div>
 
     <div class="container">
@@ -24,7 +24,7 @@
                     <li><a href="#">Profil Perusahaan</a></li>
                 </ul>
                 <div class="auth-buttons">
-                    <a href="{{ route('login-level') }}">Masuk/Daftar</a>
+                    <a href="{{ route('login') }}">Masuk/Daftar</a>
                 </div>
             </nav>
         </header>
